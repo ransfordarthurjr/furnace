@@ -56,9 +56,14 @@ export default function HymnsScreen() {
                 </Link>
             </View>
 
-            {/* Hymn of the day */}
-            <View className="flex-1 bg-slate-100"></View>
+            <View className="flex-1 bg-slate-100">
+                {/* Favourites */}
+                <Text className="font-googlesans-semibold text-lg text-slate-800">
+                    Favourites
+                </Text>
+            </View>
 
+            {/* Hymn of the week */}
             <View className="flex-1">
                 <HymnOfTheWeekCard />
             </View>
