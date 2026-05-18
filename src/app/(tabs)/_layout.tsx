@@ -1,6 +1,4 @@
 import { Tabs } from 'expo-router';
-import { View } from 'react-native';
-import clsx from 'clsx';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -10,8 +8,9 @@ import {
     HymnsSvg,
     NotificationsSvg,
     PreferencesSvg,
-} from '@/components/svg/TabIconsSvg';
-import { TabIconProps, TabItemInterface } from '@/types/tab.types';
+} from '@/components/svg/SvgTabIcons';
+import { TabItemInterface } from '@/types/app.types';
+import { TabIconSvg } from '@/components/Icon';
 
 const TabItems: TabItemInterface[] = [
     { name: 'index', title: 'Home', Icon: HomeSvg },
@@ -24,24 +23,9 @@ const TabItems: TabItemInterface[] = [
 export default function TabsLayout() {
     const insets = useSafeAreaInsets();
 
-    const TabIcon = ({ focused, Icon }: TabIconProps) => (
-        <View
-            className={clsx(
-                'rounded-full items-center justify-center size-13',
-                focused && 'bg-slate-50',
-            )}>
-            <Icon
-                focused={focused}
-                className={clsx(
-                    'size-8 text-indigo-50',
-                    focused && 'text-indigo-800',
-                )}
-            />
-        </View>
-    );
-
     return (
         <Tabs
+            initialRouteName="hymns"
             screenOptions={{
                 headerShown: false,
                 tabBarShowLabel: false,
@@ -71,7 +55,7 @@ export default function TabsLayout() {
                     options={{
                         title: tab.title,
                         tabBarIcon: ({ focused, color }) => (
-                            <TabIcon focused={focused} Icon={tab.Icon} />
+                            <TabIconSvg focused={focused} Icon={tab.Icon} />
                         ),
                     }}
                 />
