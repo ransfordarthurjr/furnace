@@ -8,7 +8,9 @@
         "scheme": "furnace",
         "userInterfaceStyle": "automatic",
         "ios": {
-            "icon": "./assets/expo.icon"
+            "icon": "./assets/expo.icon",
+            "bundleIdentifier": "tech.hephaestus.wesleyan.hymnal",
+            "googleServicesFile": "./ios/GoogleService-Info.plist"
         },
         "android": {
             "adaptiveIcon": {
@@ -17,7 +19,9 @@
                 "backgroundImage": "./assets/images/android-icon-background.png",
                 "monochromeImage": "./assets/images/android-icon-monochrome.png"
             },
-            "predictiveBackGestureEnabled": false
+            "predictiveBackGestureEnabled": false,
+            "package": "tech.hephaestus.wesleyan.hymnal",
+            "googleServicesFile": "./android/app/google-services.json"
         },
         "web": {
             "output": "static",
